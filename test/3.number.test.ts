@@ -1,15 +1,24 @@
-// File: numberValidation.test.ts
+
 
 import Joi from 'joi';
 
 describe('Validasi Joi untuk Tipe Data Number', () => {
 
-    it('test', () => {
+    it('test', async () => {
         const schema = Joi.number().multiple(3);
         // ini artinya kelipatan 3
         // dan didalam Joi ini dia menggunakan modulo
         // untuk program dibaliknya
+        // dan kalo objek, maka tipe default pada si keynya itu adalah any
+        // jadi kita masukan apa aja, tapi yg pneting harus ada atribut itu / key itu
+        const object = Joi.object({
+        a: Joi.number().min(1).max(10).integer(),
+        b: 'some string'
+    });
+    
+    await object.validateAsync({ a: 5 });
     })
+
 
   it('harus valid jika input adalah angka biasa', async () => {
     // Membuat skema validasi untuk angka
