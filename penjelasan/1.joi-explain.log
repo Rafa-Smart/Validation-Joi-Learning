@@ -1,0 +1,8 @@
+https://chatgpt.com/c/6874a997-cff8-8009-a74f-6f37e96e2567
+
+cara installnya disini saya pake jest, babel, typescript, dan juga joi
+
+install joi
+npm install joi
+
+jadi ga pake --save-dev, karena emang buat production
